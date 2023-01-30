@@ -9,16 +9,14 @@ import SwiftUI
 
 struct NewEventView: View {
     @ObservedObject var viewModel = NewEventViewModel()
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         
         VStack{
-            
             DatePicker("fecha ",selection: $viewModel.currentDate,in: Date()..., displayedComponents: .date)
                 .datePickerStyle(GraphicalDatePickerStyle())
-                .colorInvert()
-                .background(Color.black)
-            
+               
             TextField("Evento",text: $viewModel.nameEvent)
                 .multilineTextAlignment(.center)
                 .keyboardType(.default)
@@ -29,13 +27,13 @@ struct NewEventView: View {
             
             Spacer()
             
-            Form{
+            Form {
                 ScrollView{
                     Text(viewModel.nameEvent)
                         .bold()
                 }
                 .frame(height: 80)
-                HStack{
+                HStack {
                     Text ("Fecha:")
                         .bold()
                     Spacer()
@@ -43,16 +41,18 @@ struct NewEventView: View {
                         .bold()
                 }
             }
+            
             Spacer()
+            
             Button("Create") {
                 viewModel.sendEvent()
             }
             
         }
         .alert(isPresented: $viewModel.iscreatetd) {
-            Alert(title: Text("Evento Creado"), message: Text("EL eventos se ha creado correctament "), dismissButton: .default(Text("Ok"), action: {
+            Alert(title: Text("Evento Creado"), message: Text("EL eventos se ha creado correctamente"), dismissButton: .default(Text("Ok"), action: {
                 // Cierra la pantalla actual
-                UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true, completion: nil)
+                self.mode.wrappedValue.dismiss()
             }))
             
             

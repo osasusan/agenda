@@ -4,16 +4,12 @@ import SwiftUI
 struct RegisterView: View {
     
     // State variables para guardar los datos del formulario
-    
-    
     @ObservedObject var viewModel = RegisterViewModel()
-    @State var isNave = false
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         
-        
         VStack {
-            
             TextField("User", text: $viewModel.user)
                 .multilineTextAlignment(.center)
                 .keyboardType(.emailAddress)
@@ -38,10 +34,11 @@ struct RegisterView: View {
                     .foregroundColor(.red)
                 
             }
+            
             Spacer()
             
-            Button( action: { viewModel.register()
-                
+            Button( action: {
+                viewModel.register()
             }) {
                 Text("Register")
                     .frame(width: 150 ,height: 50)
@@ -49,14 +46,15 @@ struct RegisterView: View {
                     .cornerRadius(20)
                 
             }
-            .background(NavigationLink(destination: AgendView(), isActive: $viewModel.isCreate, label: {
-                EmptyView()
-            }))
             
         }
         .navigationTitle("Register")
         .navigationBarTitleDisplayMode(.automatic)
-        
+        .onReceive(viewModel.$isCreate) { newValue in
+            if newValue {
+                self.mode.wrappedValue.dismiss()
+            }
+        }
         
     }
     

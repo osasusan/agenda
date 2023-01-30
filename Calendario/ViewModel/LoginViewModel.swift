@@ -15,6 +15,8 @@ class LogingViewModel : ObservableObject {
     @Published var message = ""
     @Published var isLogied = false
     
+    @Published var events : [EventPresentationModel] = []
+    
     //var NetworkService = NetworkService()
     
     func login() {
@@ -35,8 +37,34 @@ class LogingViewModel : ObservableObject {
                 }
             }
     }
-   
-  
+    
+    func getEvents() {
+        let agendaProvider = AgendaProvider()
+        agendaProvider.delegate = self
+        agendaProvider.getEvents()
+    }
+    
+    func getAgendViewModel() -> AgendViewModel {
+        let agendViewModel = AgendViewModel()
+        agendViewModel.events = events
+        return agendViewModel
+    }
 }
     
+// MARK: - Extension AgendaProviderProtocol
 
+extension LogingViewModel: AgendaProviderProtocol {
+    
+    func onSuccess(_ eventsNotFiltered: [EventResponseModel]) {
+        self.message = ""
+        self.events = eventsNotFiltered.compactMap({ eventNotFiltered in
+            guard let date = eventNotFiltered.date else { return nil }
+            return EventPresentationModel(name: eventNotFiltered.name ?? "Empty Name", date: date)
+        })
+    }
+    
+    func onError(error: String) {
+        self.message = error
+    }
+    
+}

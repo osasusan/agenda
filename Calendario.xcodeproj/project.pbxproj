@@ -14,11 +14,12 @@
 		481E4C6F296DE1AB006E6668 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 481E4C6E296DE1AB006E6668 /* Alamofire */; };
 		4875FC142984920B0029DE84 /* NewEventVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875FC132984920B0029DE84 /* NewEventVIewModel.swift */; };
 		4875FC16298493710029DE84 /* AgendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875FC15298493710029DE84 /* AgendViewModel.swift */; };
+		4875FC1B29881DD40029DE84 /* AgendaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875FC1A29881DD40029DE84 /* AgendaProvider.swift */; };
 		488999E7296F8D5E003DFE21 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488999E6296F8D5E003DFE21 /* LoginViewModel.swift */; };
 		488999E9296F8DA5003DFE21 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488999E8296F8DA5003DFE21 /* RegisterViewModel.swift */; };
 		488999EB29707D33003DFE21 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488999EA29707D33003DFE21 /* LoginView.swift */; };
 		488999F029709AA8003DFE21 /* ContetnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488999EF29709AA8003DFE21 /* ContetnView.swift */; };
-		48D989A4297F12530076779F /* AgendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D989A3297F12530076779F /* AgendView.swift */; };
+		48D989A4297F12530076779F /* AgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D989A3297F12530076779F /* AgendaView.swift */; };
 		48D989AA29804D7A0076779F /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D989A929804D7A0076779F /* NewEventView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,11 +31,12 @@
 		481E4C66296C9F4C006E6668 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4875FC132984920B0029DE84 /* NewEventVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventVIewModel.swift; sourceTree = "<group>"; };
 		4875FC15298493710029DE84 /* AgendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendViewModel.swift; sourceTree = "<group>"; };
+		4875FC1A29881DD40029DE84 /* AgendaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaProvider.swift; sourceTree = "<group>"; };
 		488999E6296F8D5E003DFE21 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		488999E8296F8DA5003DFE21 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		488999EA29707D33003DFE21 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		488999EF29709AA8003DFE21 /* ContetnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContetnView.swift; sourceTree = "<group>"; };
-		48D989A3297F12530076779F /* AgendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendView.swift; sourceTree = "<group>"; };
+		48D989A3297F12530076779F /* AgendaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaView.swift; sourceTree = "<group>"; };
 		48D989A929804D7A0076779F /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		4875FC1729881D1F0029DE84 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4875FC1A29881DD40029DE84 /* AgendaProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -111,7 +114,7 @@
 				488999EF29709AA8003DFE21 /* ContetnView.swift */,
 				488999EA29707D33003DFE21 /* LoginView.swift */,
 				481E4C61296C9F4B006E6668 /* RegisterView.swift */,
-				48D989A3297F12530076779F /* AgendView.swift */,
+				48D989A3297F12530076779F /* AgendaView.swift */,
 				48D989A929804D7A0076779F /* NewEventView.swift */,
 			);
 			path = View;
@@ -194,7 +197,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				488999F029709AA8003DFE21 /* ContetnView.swift in Sources */,
-				48D989A4297F12530076779F /* AgendView.swift in Sources */,
+				48D989A4297F12530076779F /* AgendaView.swift in Sources */,
+				4875FC1B29881DD40029DE84 /* AgendaProvider.swift in Sources */,
 				481E4C62296C9F4B006E6668 /* RegisterView.swift in Sources */,
 				48D989AA29804D7A0076779F /* NewEventView.swift in Sources */,
 				481E4C60296C9F4B006E6668 /* CalendarioApp.swift in Sources */,

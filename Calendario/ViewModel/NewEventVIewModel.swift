@@ -21,11 +21,10 @@ class NewEventViewModel : ObservableObject {
     }
     
     func sendEvent(){
+    
+       let event = Event(name: nameEvent, date: convertDateToInt(date: currentDate))
         
-      
-        let event = Event(name: nameEvent, date: convertDateToInt(date: currentDate))
-        
-        AF.request("https://superapi.netlify.app/api/db/eventos",method:.post,parameters: event,encoder: JSONParameterEncoder.json)
+        AF.request("https://superapi.netlify.app/api/db/eventos", method: .post, parameters: event, encoder: JSONParameterEncoder.json)
             .validate()
             .response {(response) in
                 switch response.result{
@@ -33,10 +32,7 @@ class NewEventViewModel : ObservableObject {
                     print("ok")
                     self.iscreatetd = true
                 case .failure(let error):
-                    
                     print(error)
-                    
-                    
                 }
             }
     }

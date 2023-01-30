@@ -12,7 +12,6 @@ class RegisterViewModel : ObservableObject {
     @Published var pass = ""
     @Published var message = ""
     @Published var isCreate = false
-    //var NetworkService = NetworkService()
     
     func register() {
         
